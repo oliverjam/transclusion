@@ -20,9 +20,10 @@ Add `data-boost` to an anchor tag. By default transclusion will try to emulate e
 <a href="/posts/1" data-boost>Post 1</a>
 ```
 
-I would not recommend boosting a link like this because it doesn't really improve user-experience, and can make things worse since navigating with JS will usually have more inconsistencies than a native navigation.
-
-Instead use this pattern when you want to update a smaller part of the page whilst maintaining state in the rest of the UI. You can target an element on the page by passing a selector to the `data-target` attribute:
+> [!IMPORTANT]  
+> I would not recommend boosting a link like this because it doesn't really improve user-experience, and can make things worse since navigating with JS will usually have more inconsistencies than a native navigation.
+>
+> Instead use this pattern when you want to update a smaller part of the page whilst maintaining state in the rest of the UI. You can target an element on the page by passing a selector to the `data-target` attribute:
 
 ```html
 <a href="/posts/1" data-boost data-target="#post">Post 1</a>
@@ -40,9 +41,9 @@ Forms are a great target for enhancement since they often mutate some server-sid
 
 ```html
 <form method="POST" data-boost data-select="output" data-target="output">
-	<button name="diff" value="-1">-</button>
-	<output>0</output>
-	<button name="diff" value="+1">+</button>
+  <button name="diff" value="-1">-</button>
+  <output>0</output>
+  <button name="diff" value="+1">+</button>
 </form>
 ```
 
