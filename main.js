@@ -5,10 +5,11 @@
 /**
  * @param {MouseEvent | SubmitEvent} event
  */
-async function handle(event) {
+export async function handle(event) {
 	let el = event.target;
-	if (!(el instanceof HTMLFormElement)) return;
-	if (!(el instanceof HTMLAnchorElement)) return;
+	if (!(el instanceof HTMLFormElement) && !(el instanceof HTMLAnchorElement)) {
+		return;
+	}
 	if (!el.hasAttribute("data-boost")) return;
 
 	let { confirm, target, select, swap, reset, history, delay } = config(el);
